@@ -15,17 +15,17 @@ pipeline {
             }
         }
         
-        stage ('deploy to EC2') {
-            steps {
-                script {
-                    echo "deployng to shell-script to ec2"
-                    def shellCmd = "bash ./websetup.sh"
-                    sshagent (['ec2-server']) {
-                        sh "scp -o StrictHostKeyChecking=no websetup.sh ubuntu@35.179.180.77:/home/ubuntu"
-                        sh "ssh -o StrictHostKeyChecking=no ubuntu@35.179.180.77 ${shellCmd}"
-                    }
-                }
-            }
-        }
+        // stage ('deploy to EC2') {
+        //     steps {
+        //         script {
+        //             echo "deployng to shell-script to ec2"
+        //             def shellCmd = "bash ./websetup.sh"
+        //             sshagent (['ec2-server']) {
+        //                 sh "scp -o StrictHostKeyChecking=no websetup.sh ubuntu@35.179.180.77:/home/ubuntu"
+        //                 sh "ssh -o StrictHostKeyChecking=no ubuntu@35.179.180.77 ${shellCmd}"
+        //             }
+        //         }
+        //     }
+        // }
     }
 }
