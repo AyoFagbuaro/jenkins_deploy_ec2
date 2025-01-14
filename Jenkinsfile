@@ -21,7 +21,6 @@ pipeline {
             
                     def shellCmd = "bash /home/ubuntu/websetup.sh"
             
-                        // Ensure the file path on EC2 is correct
                     sshagent(['ec2-server']) {
                     // SCP to transfer the shell script to EC2 instance
                         sh "scp -o StrictHostKeyChecking=no ./websetup.sh ubuntu@${EC2_IP}:/home/ubuntu"
