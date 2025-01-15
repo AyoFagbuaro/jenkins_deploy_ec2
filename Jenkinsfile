@@ -17,7 +17,7 @@ pipeline {
         stage('deploy to EC2') {
             steps {
                 script {
-                    echo "Deploying shell scripts to EC2 instance"
+                    echo "Deploying shell script to EC2 instance"
             
                     def shellCmd = "bash /home/ubuntu/websetup.sh"
             
